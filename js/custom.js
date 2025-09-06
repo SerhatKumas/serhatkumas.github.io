@@ -10,6 +10,27 @@ $(window).load(function () {
     });
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  
+  // Toggle menu when hamburger is clicked
+  header.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      header.classList.toggle('menu-open');
+    }
+  });
+  
+  // Close menu when a link is clicked
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        header.classList.remove('menu-open');
+      }
+    });
+  });
+});
+
 $(document).ready(function () {
     "use strict";
 
