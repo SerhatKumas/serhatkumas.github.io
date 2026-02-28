@@ -1,0 +1,421 @@
+/* ==========================================================
+   MUSIC LAB — Vinyl Turntable Player
+   ========================================================== */
+
+#page-musiclab {
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.musiclab-section {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-16) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.musiclab-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.musiclab-header .section-label {
+    color: rgba(15, 23, 42, 0.7);
+}
+
+.musiclab-header h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.musiclab-header p {
+    color: rgba(15, 23, 42, 0.7);
+    font-size: var(--size-lg);
+    margin-top: var(--space-3);
+}
+
+/* ── Search Bar ── */
+.musiclab-search {
+    display: flex;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 560px;
+    margin-bottom: var(--space-12);
+}
+
+.musiclab-search__input {
+    flex: 1;
+    padding: 1rem 1.4rem;
+    border-radius: 16px;
+    border: 1.5px solid rgba(192, 160, 98, 0.06);
+    background: rgba(255, 255, 255, 0.4);
+    color: #0f172a;
+    font-size: var(--size-base);
+    font-family: var(--font-body);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.musiclab-search__input::placeholder {
+    color: rgba(15, 23, 42, 0.5);
+}
+
+.musiclab-search__input:focus {
+    border-color: rgba(192, 160, 98, 0.6);
+    box-shadow: 0 0 0 4px rgba(192, 160, 98, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.musiclab-search__btn {
+    padding: 1rem 1.6rem;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #0f172a;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: var(--size-base);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.musiclab-search__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(192, 160, 98, 0.4);
+}
+
+/* ── Turntable ── */
+.musiclab-turntable {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    margin-bottom: var(--space-10);
+}
+
+/* Base/Plinth */
+.turntable-base {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border: 1px solid rgba(192, 160, 98, 0.04);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(192, 160, 98, 0.04);
+}
+
+/* Vinyl Record */
+.turntable-vinyl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at center, #222 0%, #222 8%, transparent 8.5%),
+        radial-gradient(circle at center, transparent 28%, rgba(40, 40, 60, 0.5) 28.5%, rgba(40, 40, 60, 0.5) 29%, transparent 29.5%),
+        radial-gradient(circle at center, transparent 38%, rgba(40, 40, 60, 0.3) 38.5%, rgba(40, 40, 60, 0.3) 39%, transparent 39.5%),
+        radial-gradient(circle at center, transparent 46%, rgba(40, 40, 60, 0.2) 46.5%, rgba(40, 40, 60, 0.2) 47%, transparent 47.5%),
+        conic-gradient(from 0deg,
+            #111 0deg, #1a1a1a 30deg, #111 60deg, #1a1a1a 90deg,
+            #111 120deg, #1a1a1a 150deg, #111 180deg, #1a1a1a 210deg,
+            #111 240deg, #1a1a1a 270deg, #111 300deg, #1a1a1a 330deg, #111 360deg);
+    box-shadow:
+        0 0 0 4px #0a0a15,
+        0 0 40px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.4s ease;
+}
+
+.turntable-vinyl.spinning {
+    animation: vinyl-spin 2s linear infinite;
+    box-shadow:
+        0 0 0 4px #0a0a15,
+        0 0 40px rgba(192, 160, 98, 0.15);
+}
+
+@keyframes vinyl-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Center Label */
+.turntable-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(192, 160, 98, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px;
+}
+
+.turntable-label::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f8fafc;
+    z-index: 3;
+}
+
+/* Tonearm */
+.turntable-arm {
+    position: absolute;
+    top: 60px;
+    right: 55px;
+    width: 6px;
+    height: 170px;
+    background: linear-gradient(to bottom, #888, #555);
+    border-radius: 3px;
+    transform-origin: top center;
+    transform: rotate(-30deg);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 5;
+}
+
+.turntable-arm.playing {
+    transform: rotate(-5deg);
+}
+
+.turntable-arm::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #999, #555);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.turntable-arm::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 16px;
+    background: linear-gradient(to bottom, #888, #ccc);
+    border-radius: 1px;
+}
+
+/* ── Controls ── */
+.musiclab-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.musiclab-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(30, 41, 59, 0.12);
+    background: rgba(255, 255, 255, 0.4);
+    color: #0f172a;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+}
+
+.musiclab-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(192, 160, 98, 0.4);
+    transform: scale(1.08);
+}
+
+.musiclab-btn--play {
+    width: 72px;
+    height: 72px;
+    font-size: 2rem;
+    background: linear-gradient(135deg, rgba(192, 160, 98, 0.3), rgba(212, 184, 118, 0.2));
+    border-color: rgba(30, 41, 59, 0.3);
+    box-shadow: 0 4px 20px rgba(192, 160, 98, 0.2);
+}
+
+.musiclab-btn--play:hover {
+    box-shadow: 0 8px 32px rgba(192, 160, 98, 0.4);
+}
+
+/* Volume Slider */
+.musiclab-volume {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-left: var(--space-4);
+}
+
+.musiclab-volume__icon {
+    color: rgba(15, 23, 42, 0.7);
+    font-size: 1.2rem;
+}
+
+.musiclab-volume__slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+.musiclab-volume__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2563eb;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(192, 160, 98, 0.5);
+}
+
+.musiclab-volume__slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2563eb;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 8px rgba(192, 160, 98, 0.5);
+}
+
+/* Now Playing Info */
+.musiclab-nowplaying {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    min-height: 50px;
+}
+
+.musiclab-nowplaying__title {
+    font-family: var(--font-head);
+    font-size: var(--size-lg);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.musiclab-nowplaying__status {
+    font-size: var(--size-sm);
+    color: rgba(15, 23, 42, 0.6);
+}
+
+/* ── Preset Songs ── */
+.musiclab-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    max-width: 600px;
+}
+
+.musiclab-preset {
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(192, 160, 98, 0.06);
+    background: rgba(255, 255, 255, 0.4);
+    color: #0f172a;
+    font-size: var(--size-sm);
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.musiclab-preset:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(30, 41, 59, 0.3);
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+.musiclab-preset.active {
+    background: linear-gradient(135deg, rgba(192, 160, 98, 0.25), rgba(212, 184, 118, 0.15));
+    border-color: rgba(192, 160, 98, 0.4);
+    color: #0f172a;
+}
+
+/* Hidden YouTube player */
+.musiclab-yt-container {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .musiclab-turntable {
+        width: 300px;
+        height: 300px;
+    }
+
+    .turntable-vinyl {
+        width: 220px;
+        height: 220px;
+    }
+
+    .turntable-label {
+        width: 60px;
+        height: 60px;
+        font-size: 0.55rem;
+    }
+
+    .turntable-arm {
+        height: 130px;
+        top: 45px;
+        right: 40px;
+    }
+
+    .musiclab-search {
+        flex-direction: column;
+    }
+
+    .musiclab-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

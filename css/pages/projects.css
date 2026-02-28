@@ -1,0 +1,276 @@
+/* ==========================================================
+   PROJECTS PAGE
+   ========================================================== */
+
+#page-projects {
+    overflow: hidden;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Project Card */
+.project-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--dur-std) var(--ease-out),
+        border-color var(--dur-std),
+        box-shadow var(--dur-std);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out),
+        border-color var(--dur-std), box-shadow var(--dur-std);
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(192, 160, 98, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), var(--shadow-glow);
+}
+
+/* Screen / Device Mockup */
+.project-card__screen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: var(--clr-surface-2);
+    overflow: hidden;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.project-card__screen-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+    z-index: 2;
+}
+
+.project-card__screen-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.project-card__screen-dot:nth-child(1) {
+    background: #FF5F57;
+}
+
+.project-card__screen-dot:nth-child(2) {
+    background: #FFBD2E;
+}
+
+.project-card__screen-dot:nth-child(3) {
+    background: #28CA42;
+}
+
+.project-card__preview {
+    position: absolute;
+    inset: 28px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    transition: transform var(--dur-std) var(--ease-out);
+}
+
+.project-card:hover .project-card__preview {
+    transform: scale(1.1);
+}
+
+.project-card__preview-gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    transition: opacity var(--dur-std);
+}
+
+.project-card:hover .project-card__preview-gradient {
+    opacity: 0.5;
+}
+
+/* Overlay on hover */
+.project-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(241, 245, 249, 0.88);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    opacity: 0;
+    transition: opacity var(--dur-std);
+    z-index: 3;
+}
+
+.project-card:hover .project-card__overlay {
+    opacity: 1;
+}
+
+.project-card__overlay-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-head);
+    font-size: var(--size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.project-card__overlay-btn:hover {
+    transform: scale(1.05);
+}
+
+.project-card__overlay-btn--primary {
+    background: var(--grad-primary);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(192, 160, 98, 0.4);
+}
+
+.project-card__overlay-btn--outline {
+    background: transparent;
+    color: var(--clr-text);
+    border: 1px solid var(--clr-border);
+}
+
+.project-card__overlay-btn--outline:hover {
+    border-color: var(--clr-primary);
+}
+
+/* Card body */
+.project-card__body {
+    padding: var(--space-6);
+}
+
+.project-card__number {
+    font-family: var(--font-head);
+    font-size: var(--size-xs);
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--clr-primary);
+    margin-bottom: var(--space-2);
+}
+
+.project-card__title {
+    font-family: var(--font-head);
+    font-size: var(--size-xl);
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: var(--space-3);
+}
+
+.project-card__desc {
+    font-size: var(--size-sm);
+    color: var(--clr-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+}
+
+.project-card__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* Modal */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-std) var(--ease-out);
+}
+
+.project-modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.project-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(241, 245, 249, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.project-modal__content {
+    position: relative;
+    z-index: 1;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-xl);
+    max-width: 760px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--space-12);
+    transform: translateY(40px) scale(0.95);
+    transition: transform var(--dur-std) var(--ease-out);
+}
+
+.project-modal.open .project-modal__content {
+    transform: none;
+}
+
+.project-modal__close {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background var(--dur-fast), color var(--dur-fast);
+}
+
+.project-modal__close:hover {
+    background: var(--clr-surface-2);
+    color: var(--clr-text);
+}
+
+.project-modal__links {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

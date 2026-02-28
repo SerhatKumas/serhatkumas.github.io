@@ -1,0 +1,376 @@
+/* ==========================================================
+   3D LAB PAGE
+   ========================================================== */
+
+#page-lab {
+    overflow: hidden;
+    position: relative;
+}
+
+/* ── Full-bleed Canvas ── */
+#lab-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+    touch-action: none;
+    z-index: 1;
+}
+
+#lab-canvas:active {
+    cursor: grabbing;
+}
+
+/* ── Page Layout ── */
+.lab-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* ── Corner Header (top-left overlay) ── */
+.lab-header {
+    position: absolute;
+    top: calc(var(--nav-h) + var(--space-8));
+    left: var(--space-8);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.lab-header__label {
+    font-family: var(--font-head);
+    font-size: var(--size-xs);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+    margin-bottom: var(--space-2);
+}
+
+.lab-header__title {
+    font-family: var(--font-head);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--clr-text);
+}
+
+.lab-header__title span {
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Controls Panel (bottom-center) ── */
+.lab-controls {
+    position: absolute;
+    bottom: var(--space-10);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+/* Shutter Button */
+.lab-shutter {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 6px rgba(192, 160, 98, 0.12), 0 8px 32px rgba(192, 160, 98, 0.3);
+    transition: transform 0.15s var(--ease-out), box-shadow 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.lab-shutter:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 8px rgba(192, 160, 98, 0.15), 0 12px 40px rgba(192, 160, 98, 0.4);
+}
+
+.lab-shutter:active {
+    transform: scale(0.93);
+}
+
+.lab-shutter__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Hint pills */
+.lab-hints {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lab-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(192, 160, 98, 0.14);
+    font-size: var(--size-xs);
+    color: var(--clr-muted);
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(192, 160, 98, 0.06);
+}
+
+.lab-hint strong {
+    color: var(--clr-primary);
+    font-weight: 600;
+}
+
+/* ── Side Controls (right) ── */
+.lab-side-controls {
+    position: absolute;
+    right: var(--space-8);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.lab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(192, 160, 98, 0.14);
+    font-size: var(--size-xs);
+    font-weight: 600;
+    color: var(--clr-text);
+    cursor: pointer;
+    transition: background var(--dur-fast), border-color var(--dur-fast),
+        transform var(--dur-fast), box-shadow var(--dur-fast);
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.lab-btn:hover {
+    background: rgba(46, 49, 56, 0.97);
+    border-color: rgba(192, 160, 98, 0.3);
+    transform: translateX(-3px);
+    box-shadow: 0 4px 16px rgba(192, 160, 98, 0.1);
+}
+
+.lab-btn.active {
+    background: var(--grad-primary);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(192, 160, 98, 0.3);
+}
+
+/* ── Part Tooltip ── */
+.lab-tooltip {
+    position: fixed;
+    z-index: 200;
+    pointer-events: none;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-md);
+    background: rgba(241, 245, 249, 0.9);
+    color: #fff;
+    font-size: var(--size-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(192, 160, 98, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.15s;
+    transform: translate(-50%, -130%);
+}
+
+.lab-tooltip.visible {
+    opacity: 1;
+}
+
+/* ── Flash Overlay ── */
+.lab-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.05s;
+}
+
+.lab-flash.active {
+    opacity: 0.95;
+}
+
+/* ── Shot Counter ── */
+.lab-shot-counter {
+    position: absolute;
+    top: calc(var(--nav-h) + var(--space-8));
+    right: var(--space-8);
+    z-index: 10;
+    font-family: var(--font-head);
+    font-size: var(--size-sm);
+    font-weight: 700;
+    color: var(--clr-muted);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(192, 160, 98, 0.12);
+    border-radius: var(--radius-md);
+    padding: 0.4rem 0.9rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.lab-shot-counter span {
+    color: var(--clr-primary);
+}
+
+/* ── Particle Canvas (for burst effect) ── */
+#lab-particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 8999;
+}
+
+/* ── Object Selector Tabs (vertical, left side) ── */
+.lab-object-tabs {
+    position: absolute;
+    top: calc(var(--nav-h) + var(--space-8) + 110px);
+    left: var(--space-8);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: 6px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(192, 160, 98, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 24px rgba(192, 160, 98, 0.08);
+    pointer-events: auto;
+}
+
+.lab-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.45rem 0.9rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: transparent;
+    font-size: var(--size-xs);
+    font-weight: 600;
+    color: var(--clr-muted);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+    white-space: nowrap;
+}
+
+.lab-tab:hover {
+    background: rgba(192, 160, 98, 0.08);
+    color: var(--clr-text);
+}
+
+.lab-tab.active {
+    background: var(--grad-primary);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(192, 160, 98, 0.3);
+}
+
+.lab-tab__icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.lab-tab__name {
+    pointer-events: none;
+    font-size: var(--size-xs);
+}
+
+/* ── Action Label ── */
+.lab-action-label {
+    font-family: var(--font-head);
+    font-size: var(--size-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+    margin-top: var(--space-2);
+    text-align: center;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+    .lab-side-controls {
+        right: var(--space-4);
+        bottom: 260px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+    }
+
+    .lab-header {
+        left: var(--space-4);
+    }
+
+    .lab-header__title {
+        font-size: 1.25rem;
+    }
+
+    .lab-shutter {
+        width: 60px;
+        height: 60px;
+    }
+
+    .lab-object-tabs {
+        top: auto;
+        bottom: 200px;
+        left: var(--space-4);
+        max-height: 50vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .lab-object-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .lab-tab__name {
+        display: none;
+    }
+
+    .lab-tab {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.65rem;
+    }
+
+    .lab-tab__icon {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,218 @@
+/* ==========================================================
+   EDUCATION PAGE
+   ========================================================== */
+
+#page-education {
+    overflow: hidden;
+}
+
+/* Timeline */
+.edu-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 60px;
+}
+
+.edu-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--clr-primary), var(--clr-accent), transparent);
+}
+
+.edu-entry {
+    position: relative;
+    margin-bottom: var(--space-12);
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.edu-entry.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Dot */
+.edu-entry__dot {
+    position: absolute;
+    left: -48px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--clr-bg);
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background var(--dur-std), box-shadow var(--dur-std);
+}
+
+.edu-entry:hover .edu-entry__dot {
+    background: var(--clr-primary);
+    box-shadow: 0 0 20px rgba(192, 160, 98, 0.4);
+}
+
+.edu-entry__dot-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    transition: background var(--dur-std);
+}
+
+.edu-entry:hover .edu-entry__dot-inner {
+    background: #fff;
+}
+
+/* Card */
+.edu-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    transition: border-color var(--dur-std), box-shadow var(--dur-std), transform var(--dur-std) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--grad-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-std) var(--ease-out);
+}
+
+.edu-entry:hover .edu-card {
+    border-color: rgba(192, 160, 98, 0.2);
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+    transform: translateX(4px);
+}
+
+.edu-entry:hover .edu-card::before {
+    transform: scaleX(1);
+}
+
+.edu-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.edu-card__degree {
+    font-family: var(--font-head);
+    font-size: var(--size-xl);
+    font-weight: 700;
+    color: var(--clr-text);
+}
+
+.edu-card__year {
+    font-family: var(--font-head);
+    font-size: var(--size-sm);
+    font-weight: 600;
+    color: var(--clr-accent);
+    padding: 0.3rem 0.8rem;
+    background: rgba(212, 184, 118, 0.08);
+    border: 1px solid rgba(212, 184, 118, 0.22);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.edu-card__institution {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--size-base);
+    color: var(--clr-primary);
+    font-weight: 500;
+    margin-bottom: var(--space-6);
+}
+
+.edu-card__icon {
+    font-size: 1.1rem;
+}
+
+.edu-card__desc {
+    color: var(--clr-muted);
+    font-size: var(--size-sm);
+    line-height: 1.8;
+    margin-bottom: var(--space-6);
+}
+
+.edu-card__courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.edu-card__gpa {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--size-sm);
+    color: var(--clr-muted);
+}
+
+.edu-card__gpa strong {
+    color: var(--clr-text);
+    font-weight: 600;
+}
+
+/* Certifications */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.cert-card {
+    padding: var(--space-6);
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(192, 160, 98, 0.3);
+    box-shadow: var(--shadow-card);
+}
+
+.cert-card__icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.cert-card__name {
+    font-family: var(--font-head);
+    font-size: var(--size-base);
+    font-weight: 600;
+    color: var(--clr-text);
+    margin-bottom: var(--space-1);
+}
+
+.cert-card__issuer {
+    font-size: var(--size-sm);
+    color: var(--clr-muted);
+}

@@ -1,0 +1,279 @@
+/* ==========================================================
+   EXPERIENCE PAGE
+   ========================================================== */
+
+#page-experience {
+    overflow: hidden;
+}
+
+/* Career progress bar */
+.exp-progress-bar {
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 50;
+    background: var(--clr-bg);
+    border-bottom: 1px solid var(--clr-border);
+    padding: var(--space-4) 0;
+}
+
+.exp-progress-bar__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.exp-progress-bar__label {
+    font-size: var(--size-xs);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-muted);
+    white-space: nowrap;
+}
+
+.exp-progress-bar__track {
+    flex: 1;
+    height: 2px;
+    background: var(--clr-surface-2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.exp-progress-bar__fill {
+    height: 100%;
+    width: 0%;
+    background: var(--grad-primary);
+    border-radius: 2px;
+    transition: width var(--dur-fast) linear;
+}
+
+.exp-progress-bar__year {
+    font-family: var(--font-head);
+    font-size: var(--size-sm);
+    font-weight: 600;
+    color: var(--clr-primary);
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Timeline */
+.exp-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-16) 0;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--clr-primary), var(--clr-accent), transparent);
+}
+
+.exp-entry {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    margin-bottom: var(--space-16);
+    align-items: start;
+}
+
+/* Alternate sides */
+.exp-entry:nth-child(even) .exp-card {
+    grid-column: 3;
+}
+
+.exp-entry:nth-child(even) .exp-connector {
+    grid-column: 2;
+}
+
+.exp-entry:nth-child(even) .exp-spacer {
+    grid-column: 1;
+}
+
+.exp-entry:nth-child(odd) .exp-card {
+    grid-column: 1;
+}
+
+.exp-entry:nth-child(odd) .exp-connector {
+    grid-column: 2;
+}
+
+.exp-entry:nth-child(odd) .exp-spacer {
+    grid-column: 3;
+}
+
+.exp-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--space-6);
+}
+
+.exp-connector__dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--clr-bg);
+    border: 2px solid var(--clr-primary);
+    flex-shrink: 0;
+    transition: background var(--dur-std), box-shadow var(--dur-std);
+    position: relative;
+    z-index: 1;
+}
+
+.exp-entry:hover .exp-connector__dot {
+    background: var(--clr-primary);
+    box-shadow: 0 0 24px rgba(192, 160, 98, 0.45);
+}
+
+/* Card */
+.exp-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin: 0 var(--space-4);
+    transition: border-color var(--dur-std), box-shadow var(--dur-std), transform var(--dur-std) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.exp-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out),
+        border-color var(--dur-std), box-shadow var(--dur-std);
+}
+
+.exp-card:hover {
+    border-color: rgba(192, 160, 98, 0.25);
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+    transform: translateY(-4px);
+}
+
+.exp-card__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.exp-card__company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--clr-surface-2);
+    border: 1px solid var(--clr-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.exp-card__period {
+    font-family: var(--font-head);
+    font-size: var(--size-xs);
+    font-weight: 600;
+    color: var(--clr-accent);
+    padding: 0.3rem 0.8rem;
+    background: rgba(212, 184, 118, 0.08);
+    border: 1px solid rgba(212, 184, 118, 0.25);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.exp-card__role {
+    font-family: var(--font-head);
+    font-size: var(--size-xl);
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: var(--space-1);
+}
+
+.exp-card__company {
+    font-size: var(--size-sm);
+    color: var(--clr-primary);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+}
+
+.exp-card__location {
+    font-size: var(--size-xs);
+    color: var(--clr-muted);
+    margin-bottom: var(--space-6);
+}
+
+.exp-card__desc {
+    font-size: var(--size-sm);
+    margin-bottom: var(--space-6);
+}
+
+.exp-card__achievements {
+    list-style: none;
+    margin-bottom: var(--space-6);
+}
+
+.exp-card__achievements li {
+    font-size: var(--size-sm);
+    color: var(--clr-muted);
+    padding-left: var(--space-4);
+    position: relative;
+    margin-bottom: var(--space-2);
+    line-height: 1.7;
+}
+
+.exp-card__achievements li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--clr-primary);
+}
+
+.exp-card__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+    .exp-timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .exp-entry {
+        grid-template-columns: 40px 1fr;
+        margin-bottom: var(--space-8);
+    }
+
+    .exp-entry:nth-child(even) .exp-card,
+    .exp-entry:nth-child(odd) .exp-card {
+        grid-column: 2;
+    }
+
+    .exp-entry:nth-child(even) .exp-connector,
+    .exp-entry:nth-child(odd) .exp-connector {
+        grid-column: 1;
+    }
+
+    .exp-entry .exp-spacer {
+        display: none;
+    }
+
+    .exp-card {
+        margin: 0;
+    }
+}

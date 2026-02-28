@@ -2,459 +2,1380 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Serhat Kumas</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/aos.css" rel="stylesheet">
-    <!-- main style -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serhat Kumas — Software Engineer focused on AI</title>
+    <meta name="description"
+        content="Software Engineer focused on AI Applications, scalable systems, and intelligent digital experiences." />
+    <meta property="og:title" content="Serhat Kumas — Software Engineer" />
+    <meta property="og:description"
+        content="Portfolio of a software engineer specializing in backend, AI and scalable applications." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/x-icon" href="public/images/logo.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="public/images/logo.ico" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/design-system.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+    <link rel="stylesheet" href="css/pages/home.css?v=2" />
+    <link rel="stylesheet" href="css/pages/about.css" />
+    <link rel="stylesheet" href="css/pages/education.css" />
+    <link rel="stylesheet" href="css/pages/experience.css" />
+    <link rel="stylesheet" href="css/pages/projects.css" />
+    <link rel="stylesheet" href="css/pages/skills.css" />
+    <link rel="stylesheet" href="css/pages/contact.css" />
+    <link rel="stylesheet" href="css/pages/lab.css" />
+    <link rel="stylesheet" href="css/pages/gamelab.css" />
+    <link rel="stylesheet" href="css/pages/musiclab.css" />
 </head>
 
 <body>
 
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
     <!-- Preloader -->
-    <div id="preloader">
-        <div id="status">
-
-            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
-            </div>
-
+    <div class="loader" role="status" aria-label="Loading portfolio">
+        <div class="loader__logo">
+            <img src="public/images/logo.webp" alt="Loader Logo"
+                style="height: 160px; width: auto; max-width: 300px; border-radius: 8px; z-index: 2;" />
+            <div class="loader__ring" style="position: absolute; width: 180px; height: 180px;"></div>
         </div>
-    </div>
-    <!-- ./Preloader -->
-    
-    <!-- header -->
-    <header class="navbar-fixed-top">
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">education</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- ./header -->
-    
-    <!-- home -->
-    <div class="section" id="home" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="disply-table">
-                <div class="table-cell" data-aos="fade-up" data-aos-delay="0">
-                    <h4>Serhat Kumas</h4>
-                    <h1>Developer &<br /> Software Engineer</h1> </div>
-            </div>
+        <div class="loader__bar-track">
+            <div class="loader__bar-fill"></div>
         </div>
+        <div class="loader__text">Initializing Experience</div>
+        <div class="loader__count">0%</div>
     </div>
-    <!-- ./home -->
-    
-    <!-- about -->
-    <div class="section" id="about">
-        <div class="container">
-            <div class="col-md-6" data-aos="fade-up">
-                <h4>01</h4>
-                <h1 class="size-50">Know <br /> About me</h1>
-                <div class="h-50"></div>
-                <p>Results-driven and agile Software Developer with a Master's in Informatics and a 
-                    strong foundation in Computer Science. Expertise in designing and implementing
-                    software solutions, including RESTful APIs with Spring Boot and Flask, interactive
-                    web interfaces, and smart contracts in Solidity.
-                </p>
-                <p>Experienced in the entire software development lifecycle, from concept to deployment, with a passion for complex
-                    backend systems, distributed architecture, and innovative blockchain technology.
-                    Seeking to leverage robust technical skills and leadership experience in a challenging
-                    software engineering role.
-                </p>
-                <div class="h-50"></div> <img src="img/Signature.svg" width="230" alt="" />
-                <div class="h-50"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__progress" aria-hidden="true"></div>
+        <div class="nav__inner">
+            <a href="#home" class="nav__logo" data-page="home" aria-label="Home"
+                style="align-items: center; display: flex; margin-top: 16px;">
+                <img src="public/images/logo.webp" alt="SK Logo"
+                    style="height: 90px; width: auto; max-width: 240px; object-fit: contain;" />
+            </a>
+            <div class="nav__links" role="menubar">
+                <a class="nav__link" data-page="home" role="menuitem" href="#home">Home</a>
+                <a class="nav__link" data-page="lab" role="menuitem" href="#lab">3D Lab</a>
+                <a class="nav__link" data-page="gamelab" role="menuitem" href="#gamelab">Game Lab</a>
+                <a class="nav__link" data-page="musiclab" role="menuitem" href="#musiclab">Music Lab</a>
+                <a class="nav__link" data-page="about" role="menuitem" href="#about">About</a>
+
+                <a class="nav__link" data-page="experience" role="menuitem" href="#experience">Experience/Projects</a>
+                <a class="nav__link" data-page="skills" role="menuitem" href="#skills">Skills</a>
+                <a class="nav__link" data-page="contact" role="menuitem" href="#contact">Contact</a>
             </div>
-            <div class="col-md-6 about-img-div" style="position: relative;">
-                <div class="about-border" data-aos="fade-up" data-aos-delay=".5"
-                    style="position: relative; z-index: 1;">
-                </div>
-                <img src="img/about-img.jpg" width="400" class="img-responsive" alt="" align="right"
-                data-aos="fade-right" data-aos-delay="0"
-                style="position: absolute; right: 0; top: 0; z-index: 2;" />
-            </div>
+            <a class="nav__cta" data-page="contact" href="#contact">Hire Me</a>
+            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="nav__overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <a class="nav__link" data-page="home" href="#home">Home</a>
+        <a class="nav__link" data-page="lab" href="#lab">3D Lab</a>
+        <a class="nav__link" data-page="gamelab" href="#gamelab">Game Lab</a>
+        <a class="nav__link" data-page="musiclab" href="#musiclab">Music Lab</a>
+        <a class="nav__link" data-page="about" href="#about">About</a>
+
+        <a class="nav__link" data-page="experience" href="#experience">Experience/Projects</a>
+        <a class="nav__link" data-page="skills" href="#skills">Skills</a>
+        <a class="nav__link" data-page="contact" href="#contact">Contact</a>
     </div>
-    <!-- ./about -->
 
-    <!-- education  -->
-    <div class="section" id="education">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>02</h4>
-                <h1 class="size-50">My <br /> Education</h1>
-                <div class="h-50"></div>
+    <!-- ============================================================
+     PAGE: HOME
+     ============================================================ -->
+    <main id="page-home" class="page" aria-label="Home page">
+        <canvas id="home-canvas" class="home-canvas" aria-hidden="true"></canvas>
+
+        <section class="home-hero" aria-labelledby="hero-name">
+
+            <div class="home-hero__actions">
+                <a class="btn btn-primary" data-page="experience" href="#experience">View Projects</a>
+                <a class="btn btn-white" data-page="contact" href="#contact">Get In Touch</a>
             </div>
-            <div class="col-md-12">
-                <ul class="timeline">
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">April 2025 - Present</p>
-                            <h3>Universität Passau</h3>
-                            <h4>M.Sc. in Computer Science</h4>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">September 2018 - September 2023</p>
-                            <h3>Izmir Institute Of Technology</h3>
-                            <h4>B.Sc. in Computer Engineering</h4>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">October 2020 - August 2025</p>
-                            <h3>Anadolu University</h3>
-                            <h4>B.Sc. in Business Administration</h4>
-                        </div>
-                    </li>
-                </ul>
+            <div class="home-hero__scroll" aria-label="Scroll down">
+                <div class="home-hero__scroll-wheel" aria-hidden="true"></div>
+                <span>Scroll to explore</span>
             </div>
-        </div>
-    </div>
-    <!-- ./education -->
-    
-    <!-- experience  -->
-    <div class="section" id="experience">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>03</h4>
-                <h1 class="size-50">My <br /> Experience</h1>
-                <div class="h-50"></div>
+        </section>
+
+        <section class="home-sections section" aria-label="Portfolio sections">
+            <div class="home-sections__grid">
+
+                <article class="home-section-card home-section-card--span2" data-page="about" role="button" tabindex="0"
+                    aria-label="Go to About Me page">
+                    <span class="home-section-card__icon" aria-hidden="true">🧑‍💻</span>
+                    <div class="home-section-card__label">01 — About</div>
+                    <h2 class="home-section-card__title">Who I Am</h2>
+                    <p class="home-section-card__desc">Full-stack engineer with 5+ years of experience crafting scalable
+                        systems and immersive digital experiences. Passionate about the intersection of technology and
+                        design.</p>
+                    <div class="home-section-card__arrow" aria-hidden="true">↗</div>
+                </article>
+
+
+
+                <article class="home-section-card" data-page="experience" role="button" tabindex="0"
+                    aria-label="Go to Experience page">
+                    <span class="home-section-card__icon" aria-hidden="true">💼</span>
+                    <div class="home-section-card__label">02 — Experience</div>
+                    <h2 class="home-section-card__title">Career Journey</h2>
+                    <p class="home-section-card__desc">From intern to senior engineer — a timeline of real-world impact
+                        at startups and enterprise companies across Europe.</p>
+                    <div class="home-section-card__arrow" aria-hidden="true">↗</div>
+                </article>
+
+                <article class="home-section-card" data-page="experience" role="button" tabindex="0"
+                    aria-label="Go to Projects page">
+                    <span class="home-section-card__icon" aria-hidden="true">🚀</span>
+                    <div class="home-section-card__label">03 — Projects</div>
+                    <h2 class="home-section-card__title">Built Things</h2>
+                    <p class="home-section-card__desc">Production-grade apps, open-source tools, and experimental
+                        interfaces. Real code, real impact.</p>
+                    <div class="home-section-card__arrow" aria-hidden="true">↗</div>
+                </article>
+
+                <article class="home-section-card" data-page="skills" role="button" tabindex="0"
+                    aria-label="Go to Skills page">
+                    <span class="home-section-card__icon" aria-hidden="true">⚡</span>
+                    <div class="home-section-card__label">04 — Skills</div>
+                    <h2 class="home-section-card__title">Tech Stack</h2>
+                    <p class="home-section-card__desc">React, Node.js, Python, Go, PostgreSQL, Docker, AWS — and a
+                        relentless drive to learn more.</p>
+                    <div class="home-section-card__arrow" aria-hidden="true">↗</div>
+                </article>
+
+                <article class="home-section-card" data-page="contact" role="button" tabindex="0"
+                    aria-label="Go to Contact page">
+                    <span class="home-section-card__icon" aria-hidden="true">📬</span>
+                    <div class="home-section-card__label">05 — Contact</div>
+                    <h2 class="home-section-card__title">Let's Talk</h2>
+                    <p class="home-section-card__desc">Open to senior roles, consulting, and creative collaborations.
+                        Let's build something remarkable.</p>
+                    <div class="home-section-card__arrow" aria-hidden="true">↗</div>
+                </article>
+
             </div>
-            <div class="col-md-12">
-                <ul class="timeline">
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">March 2022 - February 2023</p>
-                            <h3>Software Developer</h3>
-                            <h4>DC Academy</h4>
-                            <p>Designed and deployed a scalable RESTful API for a chatbot service, integrating
-                                the Google Dialogflow CX API to automate and manage user interactions.
-                                Engineered the backend using Python/Flask to process NLP-driven requests and
-                                facilitate seamless data exchange with enterprise systems.<br><br>
-                                Developed the client-facing UI for a Dialogflow-powered chatbot, building an
-                                interactive web module with HTML, CSS, and JavaScript (ES6+) that
-                                asynchronously consumed the backend API to ensure real-time user interactions.<br><br>
-                                Architected and integrated the ChatGPT API as a scalable helper module within a
-                                microservices framework, asynchronously processing complex queries to
-                                significantly enhance the application's natural language processing (NLP) and
-                                comprehension capabilities.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">February 2022 - February 2022</p>
-                            <h3>Intern Game Developer</h3>
-                            <h4>Spike games</h4>
-                            <p>Engineered core 2D game mechanics and systems within the Unity engine,
-                                writing performant C# code to implement features such as a state-driven
-                                character controller, event-based interaction systems, and a customizable
-                                inventory management module.<br><br>
-                                Architected robust C# scripts to control complex character animation state
-                                machines and finite state machine (FSM) based enemy behavior.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">November 2021 - January 2022</p>
-                            <h3>Intern Software Developer</h3>
-                            <h4>DC Academy</h4>
-                            <p>Acquired foundational knowledge of blockchain development by building and
-                                testing basic smart contracts in Solidity, gaining hands-on experience with key
-                                concepts like transaction execution and gas optimization.<br><br>
-                                Spearheaded the design of service logic and user flow architecture for a ride-
-                                sharing application, modeling core systems such as driver-passenger matching
-                                algorithms, payment processing integration, and trip status management.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">January 2021 - February 2021</p>
-                            <h3>Intern Backend Developer</h3>
-                            <h4>Delta Smart Technologies</h4>
-                            <p>Applied core Spring Boot principles to develop a functional REST API.
-                                Implemented standard endpoints for CRUD operations, configured application
-                                properties, and utilized Spring Data JPA for basic data persistence.<br><br>
-                                Designed and developed applications based on a layered architecture principle,
-                                rigorously enforcing separation of concerns to reduce code complexity, minimize
-                                bugs, and streamline future feature development.<br><br>
-                                Engineered efficient SQL queries (joins, subqueries) and optimized stored
-                                procedures to serve application data needs, ensuring high-performance data
-                                access and integrity for backend services built in Java/Python.
-                                </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- ./experience -->
-    
-    <!-- projects -->
-    <div class="section" id="projects">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>04</h4>
-                <h1 class="size-50">My <br /> Projects</h1> 
-            </div>
-            <!-- main container -->
-            <div class="main-container portfolio-inner clearfix">
-                <!-- portfolio div -->
-                <div class="portfolio-div">
-                    <div class="portfolio">
-                        <!-- portfolio_filter -->
-                        <div class="categories-grid wow fadeInLeft">
-                            <nav class="categories">
-                                <ul class="portfolio_filter">
-                                    <li><a href="" class="active" data-filter="*">All</a></li>
-                                    <li><a href="" data-filter=".games">Web Games</a></li>
-                                    <li><a href="" data-filter=".backend">Backend Development</a></li>
-                                    <li><a href="" data-filter=".frontend">Frontend Development</a></li>
-                                    <li><a href="" data-filter=".web">Web App</a></li>
-                                    <li><a href="" data-filter=".ai">AI Chatbot</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- portfolio_filter -->
-                        
-                        <!-- portfolio_container -->
-                        <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 games">
-                                <a id="demo01" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/01.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Basic Minesweeper Game</span> <em>Web Games</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 games">
-                                <a id="demo02" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/02.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Tic Tac Toe Game</span> <em>Web Games</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 games">
-                                <a id="demo02" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/07.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Hangman Game</span> <em>Web Games</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 backend">
-                                <a id="demo03" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/03.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Basic Reservation System</span> <em>Backend Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 backend">
-                                <a id="demo03" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/08.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>User Follower API</span> <em>Backend Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 backend ai web">
-                                <a id="demo04" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/04.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>External Dialogflow API</span> <em>Backend Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 frontend">
-                                <a id="demo05" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/05.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Basic Landing Page for Taxi App</span> <em>Frontend Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 frontend web">
-                                <a id="demo05" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/09.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Most Basic To Do Web App</span> <em>Web Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 frontend">
-                                <a id="demo06" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/06.png" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Basic Start-up Landing Page</span> <em>Frontend Development</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                        </div>
-                        <!-- end portfolio_container -->
-                    </div>
-                    <!-- portfolio -->
-                </div>
-                <!-- end portfolio div -->
-            </div>
-            <!-- end main container -->
-        </div>
-    </div>
-    <!-- ./projects -->
-    
-    <!-- contact -->
-    <div class="section" id="contact">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>05</h4>
-                <h1 class="size-50">Contact  Me</h1>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up">
-
-                <h3> Mobile Number</h3>
-                <p>+49 17686075720</p>
-
-                <h3> Location </h3>
-                <p>Passau, Baveria, Germany</p>
-
-                <h3>Email</h3>
-                <p>serhatkumas@outlook.com</p>
-
-                            
-
-                <h3>Social Network</h3>
-                <ul class="social">
-                    <li><a href="https://github.com/SerhatKumas" target="_blank" ><i class="ion-social-github"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/serhatkumas/" target="_blank"><i class="ion-social-linkedin"></i></a></li>
-                    <li><a href="https://www.instagram.com/serhatkumass/" target="_blank"><i class="ion-social-instagram"></i></a></li>
-                </ul>
-
-                <br><br>
-
-                <h3>My Resume</h3>
-                <ul class="social">
-                    <li><a href="SerhatKumasCV.pdf" download="SerhatKumasCV.pdf" ><i class="ion-document-text"></i></a></li>
-                </ul>
-
-                <div class="clearfix"></div>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-8" data-aos="fade-up">
-                <form  action="https://formspree.io/f/mjkeronv" method="POST" class="contact-bg" id="contact-form">
-                    <input type="text" name="name" class="form-control" required placeholder="Your Name" />
-                    <input type="email" name="email" class="form-control" required placeholder="Your E-mail" />
-                    <input type="text" name="phone" class="form-control" required placeholder="Phone Number" />
-                    <textarea name="message" class="form-control" required placeholder="Your Message" style="height:120px"></textarea>
-                    <button id="submit" type="submit" class="btn btn-glance">Send</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- ./contact -->
-
-    <!--DEMO01-->
-    <div id="animatedModal" class="popup-modal">
-        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
-        <div id="btn-close-modal" class="close-animatedModal close-popup-modal"> <i class="ion-close-round"></i> </div>
-        <div class="clearfix"></div>
-        <div class="modal-content">
+        </section>
+    </main>
+    <!-- ============================================================
+     PAGE: ABOUT
+     ============================================================ -->
+    <main id="page-about" class="page" aria-label="About me page">
+        <section class="about-hero section">
+            <div class="about-hero__bg"><canvas id="about-canvas" aria-hidden="true"></canvas></div>
             <div class="container">
-                <div class="portfolio-padding">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>My Contributions</h2>
-                        <div class="h-50"></div>
-                        <p>Delve into the comprehensive implementation details and cutting-edge tech stacks deployed across my project portfolio.</p>
-                        <p>Each repository is meticulously documented to provide full visibility into the architectural decisions, codebase structure, and reference materials, enabling seamless knowledge transfer and synergistic collaboration.</p>
-                        <br />
-                        <br /> <img src="img/github.png" alt="" class="img-responsive" />
-                        <br />
-                        <br />
-                        <p>Explore a diverse spectrum of strategic initiatives, including backend development with robust APIs and databases, front-end development creating intuitive user interfaces, and full-scale software engineering solutions.</p>
-                        <p>For a complete analysis of contributions, research documentation, and operational specifics, navigate to my digital repository: </p>
-                        <br />
-                        <h3>My Github Page</h3>
-                        <ul class="social">
-                            <li><a href="https://github.com/SerhatKumas" target="_blank" ><i class="ion-social-github"></i></a></li>
-                        </ul>
-                        <br /> </div>
+                <div class="about-hero__content">
+                    <span class="section-label about-hero__greeting">Hello, I'm</span>
+                    <span class="about-hero__name-large">Serhat<br /><span class="gradient-text">Kumas.</span></span>
+                    <p class="about-hero__tagline">A software developer who believes that the
+                        best systems feel like <span style="color:var(--clr-text);font-weight:500">poetry in
+                            motion</span> — functional, reliable, and deeply powerful.</p>
+                    <div class="about-hero__meta">
+                        <div class="about-hero__meta-item"><span class="about-hero__meta-value">4+</span><span
+                                class="about-hero__meta-label">Years Experience</span></div>
+                        <div class="about-hero__meta-item"><span class="about-hero__meta-value">40+</span><span
+                                class="about-hero__meta-label">Projects Shipped</span></div>
+                        <div class="about-hero__meta-item"><span class="about-hero__meta-value">3</span><span
+                                class="about-hero__meta-label">Countries Worked</span></div>
+                        <div class="about-hero__meta-item"><span class="about-hero__meta-value">∞</span><span
+                                class="about-hero__meta-label">Curiosity</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-label="About story">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-profile-placeholder" aria-label="Profile photo placeholder">🧑‍💻
+                        <div
+                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(0,245,212,0.1));border-radius:inherit">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="about-story">
+                            <div class="about-story__block">
+                                <h3>Who I Am</h3>
+                                <p>I'm a <span class="highlight">software engineer</span> based in Munich, Germany,
+                                    with a deep passion for crafting robust backend systems, scalable RESTful APIs, and
+                                    intelligent AI applications. I thrive at the intersection of complex data
+                                    architectures and seamless interactive interfaces.</p>
+                            </div>
+                            <div class="about-story__block">
+                                <h3>What Drives Me</h3>
+                                <p>I believe technology should be <span class="highlight">empowering and
+                                        scalable</span>. Every system I build is designed with performance in mind —
+                                    from database query optimization to complex microservices. I'm especially drawn to
+                                    Python, Java, and modern web frameworks.</p>
+                            </div>
+                            <div class="about-story__block">
+                                <h3>My Journey</h3>
+                                <p>Currently pursuing my MSc in Computer Science at Universität Passau, I've previously
+                                    studied at Izmir Institute of Technology and Anadolu University. I've gained
+                                    hands-on experience through internships and professional roles across multiple
+                                    sectors, deepening my technical toolkit.</p>
+                            </div>
+                            <div class="about-story__block">
+                                <h3>Where I'm Headed</h3>
+                                <p>I'm seeking <span class="highlight">software engineering roles</span> at
+                                    forward-thinking companies building products that matter. I'm particularly excited
+                                    about
+                                    AI-powered applications, backend infrastructure, and scalable enterprise platforms.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about-interests">
+                            <span class="chip">⚡ Backend Services</span>
+                            <span class="chip">🎨 AI Applications</span>
+                            <span class="chip">🤖 OOP & Algorithms</span>
+                            <span class="chip">🌍 Distributed Systems</span>
+                            <span class="chip">☁️ Spring Boot & Flask</span>
+                            <span class="chip">📐 SQL & PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Credentials (merged into About) -->
+        <section class="section" aria-label="Education and credentials">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-label">Academic Background</span>
+                    <h2>Education &amp; <span class="gradient-text">Credentials</span></h2>
+                    <p class="mt-4" style="max-width:600px">A foundation built on rigorous academic training,
+                        international exposure, and continuous learning.</p>
+                </header>
+
+                <div class="edu-timeline" aria-label="Education timeline">
+
+                    <article class="edu-entry">
+                        <div class="edu-entry__dot">
+                            <div class="edu-entry__dot-inner"></div>
+                        </div>
+                        <div class="edu-card glass">
+                            <div class="edu-card__header">
+                                <h3 class="edu-card__degree">M.Sc. in Computer Science</h3>
+                                <span class="edu-card__year">2025 – Current</span>
+                            </div>
+                            <div class="edu-card__institution"><span class="edu-card__icon">🏛️</span> Universität
+                                Passau — Passau, Germany</div>
+                            <p class="edu-card__desc">Focusing on advanced algorithms, complex backend systems, and deep
+                                software engineering principles.</p>
+                            <div class="edu-card__courses">
+                                <span class="chip">Advanced Algorithms</span>
+                                <span class="chip">Distributed Systems</span>
+                                <span class="chip">Software Architecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="edu-entry">
+                        <div class="edu-entry__dot">
+                            <div class="edu-entry__dot-inner"></div>
+                        </div>
+                        <div class="edu-card glass">
+                            <div class="edu-card__header">
+                                <h3 class="edu-card__degree">B.Sc. in Computer Engineering</h3>
+                                <span class="edu-card__year">2018 – 2023</span>
+                            </div>
+                            <div class="edu-card__institution"><span class="edu-card__icon">🏛️</span> Izmir Institute
+                                of Technology — Izmir, Turkey</div>
+                            <p class="edu-card__desc">Undergraduate degree covering core computer science subjects,
+                                object-oriented programming, systems modeling, and web/backend development.</p>
+                            <div class="edu-card__courses">
+                                <span class="chip">OOP</span>
+                                <span class="chip">Data Structures</span>
+                                <span class="chip">Operating Systems</span>
+                                <span class="chip">Database Theories</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="edu-entry">
+                        <div class="edu-entry__dot">
+                            <div class="edu-entry__dot-inner"></div>
+                        </div>
+                        <div class="edu-card glass">
+                            <div class="edu-card__header">
+                                <h3 class="edu-card__degree">B.Sc. in Business Administration</h3>
+                                <span class="edu-card__year">2020 – 2025</span>
+                            </div>
+                            <div class="edu-card__institution"><span class="edu-card__icon">🏛️</span> Anadolu
+                                University — Eskisehir, Turkey</div>
+                            <p class="edu-card__desc">Focused on business strategy, project management, and
+                                organizational efficiency to bridge the gap between technical and managerial demands.
+                            </p>
+                            <div class="edu-card__courses">
+                                <span class="chip">Project Management</span>
+                                <span class="chip">Business Logic</span>
+                                <span class="chip">Economics</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Removed Certifications to keep it clean -->
+    </main>
+
+    <!-- ============================================================
+     PAGE: EXPERIENCE
+     ============================================================ -->
+    <main id="page-experience" class="page" aria-label="Experience page">
+        <div class="exp-progress-bar" aria-label="Career timeline progress">
+            <div class="exp-progress-bar__inner">
+                <span class="exp-progress-bar__label">Career Timeline</span>
+                <div class="exp-progress-bar__track">
+                    <div class="exp-progress-bar__fill"></div>
+                </div>
+                <span class="exp-progress-bar__year">2019</span>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-label">Professional History</span>
+                    <h1>Work <span class="gradient-text">Experience</span></h1>
+                    <p class="mt-4" style="max-width:600px">A journey through startups, scale-ups, and enterprise — each
+                        role shaping both technical depth and leadership ability.</p>
+                </header>
+                <div class="exp-timeline" aria-label="Career timeline">
+
+                    <div class="exp-entry">
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">💻</div><span class="exp-card__period">Jan 2026 –
+                                    Present</span>
+                            </div>
+                            <h2 class="exp-card__role">Software Development & Integration Support</h2>
+                            <p class="exp-card__company">BSH Hausgeräte</p>
+                            <p class="exp-card__location">📍 Munich, Germany</p>
+                            <p class="exp-card__desc">Providing comprehensive integration support and helping develop
+                                scalable technical solutions in an enterprise environment.</p>
+                            <div class="exp-card__tech"><span class="chip">Integration</span><span class="chip">Software
+                                    Support</span></div>
+                        </div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-spacer"></div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-spacer"></div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">🏊</div><span class="exp-card__period">May 2024 –
+                                    Sep 2024</span>
+                            </div>
+                            <h2 class="exp-card__role">Area Supervisor</h2>
+                            <p class="exp-card__company">High Sierra Pools</p>
+                            <p class="exp-card__location">📍 Off-Field Job (Management)</p>
+                            <p class="exp-card__desc">Improved leadership and communication skills by managing a team of
+                                20-30 individuals, optimizing organizational efficiency. Direct management of employee
+                                workflows and serving as the primary point of contact for 12 clients, strengthening
+                                business relationships.</p>
+                            <div class="exp-card__tech"><span class="chip">Management</span><span
+                                    class="chip">Leadership</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">🤖</div><span class="exp-card__period">Mar 2022 –
+                                    Feb 2023</span>
+                            </div>
+                            <h2 class="exp-card__role">Software Developer</h2>
+                            <p class="exp-card__company">DC Academy</p>
+                            <p class="exp-card__location">📍 Remote</p>
+                            <p class="exp-card__desc">Designed and deployed a scalable RESTful API for a chatbot
+                                service, integrating Google Dialogflow CX and ChatGPT APIs.</p>
+                            <ul class="exp-card__achievements">
+                                <li>Engineered backend using Python/Flask to process NLP-driven requests</li>
+                                <li>Developed an interactive web client UI with HTML, CSS, JavaScript (ES6+)</li>
+                                <li>Architected and integrated ChatGPT API as a scalable helper module</li>
+                            </ul>
+                            <div class="exp-card__tech"><span class="chip">Python</span><span
+                                    class="chip">Flask</span><span class="chip">ChatGPT API</span><span
+                                    class="chip">Dialogflow</span></div>
+                        </div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-spacer"></div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-spacer"></div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">🎮</div><span class="exp-card__period">Jan 2022 –
+                                    Feb 2022</span>
+                            </div>
+                            <h2 class="exp-card__role">Intern Game Developer</h2>
+                            <p class="exp-card__company">Spike Games</p>
+                            <p class="exp-card__location">📍 Remote</p>
+                            <p class="exp-card__desc">Engineered core 2D game mechanics and systems within the Unity
+                                engine, writing performant C# code.</p>
+                            <ul class="exp-card__achievements">
+                                <li>Implemented state-driven character controllers and FSM based enemy behavior</li>
+                                <li>Created event-based interaction systems and a customizable inventory module</li>
+                            </ul>
+                            <div class="exp-card__tech"><span class="chip">C#</span><span class="chip">Unity</span><span
+                                    class="chip">Game Mechanics</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">⛓️</div><span class="exp-card__period">Nov 2021 –
+                                    Jan 2022</span>
+                            </div>
+                            <h2 class="exp-card__role">Intern Software Developer</h2>
+                            <p class="exp-card__company">DC Academy</p>
+                            <p class="exp-card__location">📍 Remote</p>
+                            <p class="exp-card__desc">Acquired knowledge of blockchain development and spearheaded
+                                ride-sharing architecture.</p>
+                            <ul class="exp-card__achievements">
+                                <li>Built and tested basic smart contracts in Solidity (gas optimization)</li>
+                                <li>Designed service logic and user flow for a ride-sharing application</li>
+                            </ul>
+                            <div class="exp-card__tech"><span class="chip">Solidity</span><span class="chip">Smart
+                                    Contracts</span><span class="chip">System Architecture</span></div>
+                        </div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-spacer"></div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-spacer"></div>
+                        <div class="exp-connector">
+                            <div class="exp-connector__dot"></div>
+                        </div>
+                        <div class="exp-card glass">
+                            <div class="exp-card__top">
+                                <div class="exp-card__company-logo">⚙️</div><span class="exp-card__period">Jan 2021 –
+                                    Feb 2021</span>
+                            </div>
+                            <h2 class="exp-card__role">Intern Backend Developer</h2>
+                            <p class="exp-card__company">Delta Smart Technologies</p>
+                            <p class="exp-card__location">📍 Remote</p>
+                            <p class="exp-card__desc">Applied core Spring Boot principles to develop a functional REST
+                                API with CRUD operations.</p>
+                            <ul class="exp-card__achievements">
+                                <li>Designed applications based on a layered architecture and separated concerns</li>
+                                <li>Engineered efficient SQL queries and optimized stored procedures</li>
+                            </ul>
+                            <div class="exp-card__tech"><span class="chip">Spring Boot</span><span
+                                    class="chip">Java</span><span class="chip">SQL</span><span
+                                    class="chip">PostgreSQL</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- MOVED PROJECTS SECTION INTO EXPERIENCE MAIN -->
+                <header class="section-header" style="margin-top: 6rem;">
+                    <span class="section-label">Selected Work</span>
+                    <h1>Featured <span class="gradient-text">Projects</span></h1>
+                    <p class="mt-4" style="max-width:600px">A collection of production-grade applications, open-source
+                        tools, and experimental interfaces built with care.</p>
+                </header>
+
+                <div class="projects-grid">
+
+                    <article class="project-card" data-title="Portfolio & Roulette Game"
+                        data-desc="Frontend web development projects including a portfolio website and a fully functional interactive Roulette Game."
+                        data-role="Web Developer"
+                        data-challenge="Building responsive layouts and handling complex state and animations in the Roulette Game."
+                        data-tech="HTML, CSS, JavaScript">
+                        <div class="project-card__screen">
+                            <div class="project-card__screen-bar">
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                            </div>
+                            <div class="project-card__preview"
+                                style="background:linear-gradient(135deg,#0a0a1a,#1a1a40)">
+                                <div class="project-card__preview-gradient"
+                                    style="background:radial-gradient(circle,rgba(108,99,255,0.4),transparent)"></div>
+                                🎰
+                            </div>
+                            <div class="project-card__overlay">
+                                <button class="project-card__overlay-btn project-card__overlay-btn--primary">View
+                                    Details</button>
+                                <a class="project-card__overlay-btn project-card__overlay-btn--outline"
+                                    href="https://github.com/SerhatKumas" aria-label="GitHub" target="_blank">GitHub
+                                    ↗</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__number">01</div>
+                            <h2 class="project-card__title">Web Projects & Roulette</h2>
+                            <p class="project-card__desc">Interactive frontend projects including a portfolio and
+                                Roulette game.</p>
+                            <div class="project-card__tech"><span class="chip">HTML/CSS</span><span
+                                    class="chip">JS</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-title="OAuth & SSO Systems"
+                        data-desc="Implemented secure authentication flows using OAuth 2.0 and Single Sign-On (SSO) for centralized user management."
+                        data-role="Backend Developer"
+                        data-challenge="Ensuring secure token exchange and integration across multiple services without compromising user experience."
+                        data-tech="OAuth 2.0, SSO, JWT, Identity Management">
+                        <div class="project-card__screen">
+                            <div class="project-card__screen-bar">
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                            </div>
+                            <div class="project-card__preview"
+                                style="background:linear-gradient(135deg,#0a0a20,#200a30)">
+                                <div class="project-card__preview-gradient"
+                                    style="background:radial-gradient(circle,rgba(255,107,157,0.4),transparent)"></div>
+                                🔐
+                            </div>
+                            <div class="project-card__overlay">
+                                <button class="project-card__overlay-btn project-card__overlay-btn--primary">View
+                                    Details</button>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__number">02</div>
+                            <h2 class="project-card__title">OAuth & SSO</h2>
+                            <p class="project-card__desc">Secure authentication and centralized identity management
+                                systems.</p>
+                            <div class="project-card__tech"><span class="chip">OAuth 2.0</span><span
+                                    class="chip">SSO</span><span class="chip">Security</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-title="MCP Server Applications"
+                        data-desc="Developed Model Context Protocol (MCP) server applications to provide AI assistants with scalable and secure tool capabilities."
+                        data-role="AI Applications Engineer"
+                        data-challenge="Designing standardized interfaces for LLMs to safely interact with backend tools and databases."
+                        data-tech="Python, MCP, LLMs, API Integration">
+                        <div class="project-card__screen">
+                            <div class="project-card__screen-bar">
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                                <div class="project-card__screen-dot"></div>
+                            </div>
+                            <div class="project-card__preview"
+                                style="background:linear-gradient(135deg,#001a0a,#0a2010)">
+                                <div class="project-card__preview-gradient"
+                                    style="background:radial-gradient(circle,rgba(0,245,212,0.4),transparent)"></div>
+                                🤖
+                            </div>
+                            <div class="project-card__overlay">
+                                <button class="project-card__overlay-btn project-card__overlay-btn--primary">View
+                                    Details</button>
+                                <a class="project-card__overlay-btn project-card__overlay-btn--outline"
+                                    href="https://github.com/SerhatKumas" aria-label="GitHub" target="_blank">GitHub
+                                    ↗</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__number">03</div>
+                            <h2 class="project-card__title">AI MCP Servers</h2>
+                            <p class="project-card__desc">AI-powered applications utilizing the Model Context Protocol.
+                            </p>
+                            <div class="project-card__tech"><span class="chip">Python</span><span
+                                    class="chip">MCP</span><span class="chip">LLMs</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="project-modal__backdrop"></div>
+            <div class="project-modal__content glass">
+                <button class="project-modal__close" aria-label="Close modal">✕</button>
+                <span class="section-label" style="margin-bottom:1rem;display:block">Project Details</span>
+                <h2 class="project-modal__title" id="modal-title"
+                    style="font-size:1.75rem;margin-bottom:1rem;color:var(--clr-text)"></h2>
+                <p class="project-modal__desc" style="margin-bottom:1.5rem"></p>
+                <p
+                    style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.5rem">
+                    My Role</p>
+                <p class="project-modal__role" style="color:var(--clr-text);margin-bottom:1.5rem"></p>
+                <p
+                    style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.5rem">
+                    Key Challenge</p>
+                <p class="project-modal__challenge" style="margin-bottom:1.5rem"></p>
+                <p
+                    style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clr-muted);margin-bottom:0.75rem">
+                    Tech Stack</p>
+                <div class="project-modal__tech" style="display:flex;flex-wrap:wrap;gap:0.5rem"></div>
+                <div class="project-modal__links">
+                    <a href="https://github.com/SerhatKumas" class="btn btn-primary" aria-label="View on GitHub"
+                        target="_blank">GitHub ↗</a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!--  plugins  -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.form.js"></script>
 
-    <!--  main script  -->
-    <script src="js/custom.js"></script>
+        </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+     PAGE: SKILLS
+     ============================================================ -->
+    <main id="page-skills" class="page" aria-label="Skills page">
+        <canvas id="skills-canvas"
+            style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.15"
+            aria-hidden="true"></canvas>
+        <section class="section" style="position:relative;z-index:1">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-label">Technical Expertise</span>
+                    <h1>Skills &amp; <span class="gradient-text">Technologies</span></h1>
+                    <p class="mt-4" style="max-width:600px">Five years of hands-on experience across the full stack —
+                        from systems programming to pixel-perfect interfaces.</p>
+                </header>
+
+                <div class="skills-stats">
+                    <div class="skills-stat">
+                        <div class="skills-stat__num">15+</div>
+                        <div class="skills-stat__label">Languages &amp; Frameworks</div>
+                    </div>
+                    <div class="skills-stat">
+                        <div class="skills-stat__num">5yr</div>
+                        <div class="skills-stat__label">Industry Experience</div>
+                    </div>
+                    <div class="skills-stat">
+                        <div class="skills-stat__num">30+</div>
+                        <div class="skills-stat__label">Projects Shipped</div>
+                    </div>
+                    <div class="skills-stat">
+                        <div class="skills-stat__num">6</div>
+                        <div class="skills-stat__label">Certifications</div>
+                    </div>
+                </div>
+
+                <div class="glow-divider"></div>
+
+                <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+                    <button class="skills-tab active" role="tab" data-tab="languages"
+                        aria-selected="true">Languages</button>
+                    <button class="skills-tab" role="tab" data-tab="frameworks"
+                        aria-selected="false">Frameworks</button>
+                    <button class="skills-tab" role="tab" data-tab="backend" aria-selected="false">Backend &amp;
+                        Cloud</button>
+                    <button class="skills-tab" role="tab" data-tab="databases" aria-selected="false">Databases</button>
+                    <button class="skills-tab" role="tab" data-tab="tools" aria-selected="false">Tools &amp;
+                        DevOps</button>
+                </div>
+
+                <div class="skills-panel active" data-panel="languages">
+                    <div class="skills-featured">
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🐍</span><span
+                                class="skill-bubble__name">Python</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">☕</span><span
+                                class="skill-bubble__name">Java</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🔷</span><span
+                                class="skill-bubble__name">C#</span><span class="skill-bubble__level">Advanced</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🌊</span><span
+                                class="skill-bubble__name">JavaScript</span><span
+                                class="skill-bubble__level">Advanced</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">📊</span><span
+                                class="skill-bubble__name">SQL</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🌐</span><span
+                                class="skill-bubble__name">HTML/CSS</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🐍</span>Python</span><span
+                                    class="skill-row__level">Expert · 4yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">☕</span>Java</span><span class="skill-row__level">Expert
+                                    · 4yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">📊</span>SQL (PostgreSQL)</span><span
+                                    class="skill-row__level">Expert · 4yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🔷</span>C#</span><span
+                                    class="skill-row__level">Advanced · 2yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-panel" data-panel="frameworks">
+                    <div class="skills-featured">
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🍃</span><span
+                                class="skill-bubble__name">Spring Boot</span><span
+                                class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🌶️</span><span
+                                class="skill-bubble__name">Flask</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🎮</span><span
+                                class="skill-bubble__name">Unity</span><span class="skill-bubble__level">Advanced</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🤖</span><span
+                                class="skill-bubble__name">Dialogflow CX</span><span
+                                class="skill-bubble__level">Advanced</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🔐</span><span
+                                class="skill-bubble__name">OAuth/SSO</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🚀</span><span
+                                class="skill-bubble__name">MCP</span><span class="skill-bubble__level">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🍃</span>Spring Boot</span><span
+                                    class="skill-row__level">Expert · 3yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🌶️</span>Flask / Python Web</span><span
+                                    class="skill-row__level">Expert · 3yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🎮</span>Unity</span><span
+                                    class="skill-row__level">Advanced · 2yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-panel" data-panel="backend">
+                    <div class="skills-featured">
+                        <div class="skill-bubble"><span class="skill-bubble__icon">☁️</span><span
+                                class="skill-bubble__name">AWS</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🐳</span><span
+                                class="skill-bubble__name">Docker</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">☸️</span><span
+                                class="skill-bubble__name">Kubernetes</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">📨</span><span
+                                class="skill-bubble__name">Kafka</span><span class="skill-bubble__level">Advanced</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🔐</span><span
+                                class="skill-bubble__name">Auth / OAuth</span><span
+                                class="skill-bubble__level">Expert</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🌐</span><span
+                                class="skill-bubble__name">gRPC</span><span class="skill-bubble__level">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">☁️</span>AWS (ECS, Lambda, RDS)</span><span
+                                    class="skill-row__level">Expert · 4yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="91%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">☸️</span>Kubernetes / Helm</span><span
+                                    class="skill-row__level">Advanced · 3yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="83%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">📨</span>Apache Kafka</span><span
+                                    class="skill-row__level">Advanced · 2yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-panel" data-panel="databases">
+                    <div class="skills-featured">
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🐘</span><span
+                                class="skill-bubble__name">PostgreSQL</span><span
+                                class="skill-bubble__level">Expert</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🍃</span><span
+                                class="skill-bubble__name">MongoDB</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">⚡</span><span
+                                class="skill-bubble__name">Redis</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🔵</span><span
+                                class="skill-bubble__name">ClickHouse</span><span
+                                class="skill-bubble__level">Intermediate</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">📊</span><span
+                                class="skill-bubble__name">Elasticsearch</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🐘</span>PostgreSQL</span><span
+                                    class="skill-row__level">Expert · 5yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">⚡</span>Redis</span><span
+                                    class="skill-row__level">Expert · 4yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🍃</span>MongoDB</span><span
+                                    class="skill-row__level">Advanced · 3yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="79%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-panel" data-panel="tools">
+                    <div class="skills-featured">
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🔧</span><span
+                                class="skill-bubble__name">Git / GitHub</span><span
+                                class="skill-bubble__level">Expert</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🏗️</span><span
+                                class="skill-bubble__name">Terraform</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🚦</span><span
+                                class="skill-bubble__name">CI/CD</span><span class="skill-bubble__level">Expert</span>
+                        </div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">📈</span><span
+                                class="skill-bubble__name">Prometheus</span><span
+                                class="skill-bubble__level">Advanced</span></div>
+                        <div class="skill-bubble"><span class="skill-bubble__icon">🎨</span><span
+                                class="skill-bubble__name">Figma</span><span
+                                class="skill-bubble__level">Intermediate</span></div>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🚦</span>GitHub Actions / CI/CD</span><span
+                                    class="skill-row__level">Expert · 5yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">🏗️</span>Terraform / IaC</span><span
+                                    class="skill-row__level">Advanced · 3yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="81%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row__header"><span class="skill-row__name"><span
+                                        class="skill-row__icon">📈</span>Prometheus / Grafana</span><span
+                                    class="skill-row__level">Advanced · 2yr</span></div>
+                            <div class="skill-row__track">
+                                <div class="skill-row__fill" data-pct="77%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+     PAGE: CONTACT
+     ============================================================ -->
+    <main id="page-contact" class="page" aria-label="Contact page">
+        <canvas id="contact-canvas" class="contact-canvas" aria-hidden="true"></canvas>
+        <section class="section">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <span class="section-label contact-info__overline">Get In Touch</span>
+                        <h1 class="contact-info__heading">Let's Build Something <span
+                                class="gradient-text">Remarkable</span></h1>
+                        <p class="contact-info__desc">I'm currently open to senior engineering roles, consulting
+                            engagements, and ambitious creative collaborations. Let's find out if we're a great match.
+                        </p>
+                        <div class="contact-links">
+                            <a href="mailto:serhatkumas@outlook.com" class="contact-link" aria-label="Send email">
+                                <div class="contact-link__icon" aria-hidden="true">📧</div>
+                                <div>
+                                    <div class="contact-link__label">Email</div>
+                                    <div class="contact-link__value">serhatkumas@outlook.com</div>
+                                </div>
+                                <span class="contact-link__arrow" aria-hidden="true">↗</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/serhatkumas/" class="contact-link"
+                                aria-label="LinkedIn profile" target="_blank">
+                                <div class="contact-link__icon" aria-hidden="true">💼</div>
+                                <div>
+                                    <div class="contact-link__label">LinkedIn</div>
+                                    <div class="contact-link__value">linkedin.com/in/serhatkumas</div>
+                                </div>
+                                <span class="contact-link__arrow" aria-hidden="true">↗</span>
+                            </a>
+                            <a href="https://github.com/SerhatKumas" class="contact-link" aria-label="GitHub profile"
+                                target="_blank">
+                                <div class="contact-link__icon" aria-hidden="true">🐙</div>
+                                <div>
+                                    <div class="contact-link__label">GitHub</div>
+                                    <div class="contact-link__value">github.com/SerhatKumas</div>
+                                </div>
+                                <span class="contact-link__arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                        <div class="contact-availability">
+                            <span class="pulse" aria-hidden="true"></span>
+                            Available for new opportunities — starting March 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+     PAGE: LAB — 3D Interactive Camera
+     ============================================================ -->
+    <main id="page-lab" class="page" aria-label="3D Lab interactive experience">
+        <div class="lab-page">
+
+            <!-- Canvas -->
+            <canvas id="lab-canvas"
+                aria-label="Interactive 3D camera. Drag to rotate, click the red shutter button to take a shot."></canvas>
+            <canvas id="lab-particles" aria-hidden="true"></canvas>
+
+            <!-- Flash overlay -->
+            <div class="lab-flash" aria-hidden="true"></div>
+
+            <!-- Tooltip -->
+            <div class="lab-tooltip" role="tooltip" aria-live="polite"></div>
+
+            <!-- Header (top-left) -->
+            <div class="lab-header" aria-label="Lab section">
+                <div class="lab-header__label">Interactive 3D</div>
+                <h1 class="lab-header__title">The <span>Forge</span></h1>
+            </div>
+
+            <!-- Shot counter (top-right) -->
+            <div class="lab-shot-counter" aria-live="polite" aria-label="Shots taken">
+                🎞️ <span>0</span> shots
+            </div>
+
+            <!-- Right controls -->
+            <div class="lab-side-controls">
+                <button class="lab-btn" data-action="spin" aria-pressed="false" title="Toggle auto-spin">
+                    ↺ Auto-spin
+                </button>
+                <button class="lab-btn" data-action="reset" title="Reset camera angle">
+                    ⊙ Reset
+                </button>
+            </div>
+
+            <!-- Object selector tabs -->
+            <div class="lab-object-tabs" aria-label="Select 3D object">
+                <button class="lab-tab active" data-object="camera"><span class="lab-tab__icon">📷</span><span
+                        class="lab-tab__name">Camera</span></button>
+                <button class="lab-tab" data-object="watch"><span class="lab-tab__icon">⌚</span><span
+                        class="lab-tab__name">Watch</span></button>
+                <button class="lab-tab" data-object="boombox"><span class="lab-tab__icon">📻</span><span
+                        class="lab-tab__name">Boombox</span></button>
+                <button class="lab-tab" data-object="phone"><span class="lab-tab__icon">📱</span><span
+                        class="lab-tab__name">Phone</span></button>
+                <button class="lab-tab" data-object="car"><span class="lab-tab__icon">🏎️</span><span
+                        class="lab-tab__name">Car</span></button>
+                <button class="lab-tab" data-object="robot"><span class="lab-tab__icon">🤖</span><span
+                        class="lab-tab__name">Robot</span></button>
+            </div>
+
+            <!-- Bottom controls -->
+            <div class="lab-controls">
+                <button class="lab-shutter" aria-label="Interact with object" title="Click to interact!">
+                    <span class="lab-shutter__icon">📸</span>
+                </button>
+                <div class="lab-action-label">Click to Shoot</div>
+                <div class="lab-hints" aria-label="Interaction hints">
+                    <span class="lab-hint"><strong>Drag</strong> to orbit</span>
+                    <span class="lab-hint"><strong>Hover</strong> parts to inspect</span>
+                    <span class="lab-hint"><strong>Double-click</strong> for auto-spin</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+     PAGE: GAME LAB — Playable Mini-Games
+     ============================================================ -->
+    <main id="page-gamelab" class="page" aria-label="Game Lab — Playable mini-games">
+        <canvas id="gamelab-bg-canvas" aria-hidden="true"></canvas>
+        <div class="gamelab-page">
+
+            <div class="gamelab-header">
+                <div class="gamelab-header__label">Arcade Zone</div>
+                <h1 class="gamelab-header__title">Game <span>Lab</span></h1>
+                <p class="gamelab-header__sub">Take a break and play some mini-games — all built with Canvas.</p>
+            </div>
+
+            <div class="gamelab-grid">
+
+                <div class="gamelab-card" data-game="basketball">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#2a0a00,#4a1a00)"></div>
+                        <div class="gamelab-card__icon">🏀</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Basketball</h3>
+                        <p class="gamelab-card__desc">Drag and release to arc the ball into the hoop. 10 shots!</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">🖱️ Drag</span><span
+                                class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+                <div class="gamelab-card" data-game="bowling">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#0a1a2e,#0a0a3e)"></div>
+                        <div class="gamelab-card__icon">🎳</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Bowling</h3>
+                        <p class="gamelab-card__desc">Aim and roll the ball to knock down all pins. 5 frames!</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">🖱️ Drag</span><span
+                                class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+                <div class="gamelab-card" data-game="football">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#0a2a1a,#0a1a0a)"></div>
+                        <div class="gamelab-card__icon">⚽</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Football</h3>
+                        <p class="gamelab-card__desc">Take penalty kicks past the goalkeeper. 10 shots!</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">🖱️ Drag</span><span
+                                class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+                <div class="gamelab-card" data-game="pong">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#1a0a2e,#0a0a1a)"></div>
+                        <div class="gamelab-card__icon">🏓</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Ping Pong</h3>
+                        <p class="gamelab-card__desc">Move your paddle to beat the AI. First to 7 wins!</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">🖱️
+                                Mouse</span><span class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+                <div class="gamelab-card" data-game="spaceinvaders">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#0a0a2e,#1a0a3e)"></div>
+                        <div class="gamelab-card__icon">🚀</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Space Invaders</h3>
+                        <p class="gamelab-card__desc">Defend Earth from alien waves. Survive as long as you can!</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">⌨️
+                                Arrows</span><span class="gamelab-card__control-tag">Space</span><span
+                                class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+                <div class="gamelab-card" data-game="roulette">
+                    <div class="gamelab-card__best">🏆 0</div>
+                    <div class="gamelab-card__preview">
+                        <div class="gamelab-card__preview-bg"
+                            style="background:linear-gradient(135deg,#0a1a0a,#1a0a1a)"></div>
+                        <div class="gamelab-card__icon">🎰</div>
+                        <div class="gamelab-card__play-overlay">
+                            <div class="gamelab-card__play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="gamelab-card__body">
+                        <h3 class="gamelab-card__title">Roulette</h3>
+                        <p class="gamelab-card__desc">Spin the wheel! Bet on numbers or colors. Start with $100.</p>
+                        <div class="gamelab-card__controls"><span class="gamelab-card__control-tag">🖱️
+                                Click</span><span class="gamelab-card__control-tag">📱 Touch</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Game Container (full-screen overlay) -->
+        <div class="gamelab-container">
+            <div class="gamelab-hud">
+                <button class="gamelab-hud__back">← Back</button>
+                <div class="gamelab-hud__title"></div>
+                <div class="gamelab-hud__score">Score: <span class="gamelab-hud__score-val">0</span></div>
+            </div>
+            <canvas id="gamelab-game-canvas" class="gamelab-canvas"></canvas>
+            <div class="gamelab-gameover">
+                <div class="gamelab-gameover__title">Game Over!</div>
+                <div class="gamelab-gameover__score"></div>
+                <div class="gamelab-gameover__btns">
+                    <button class="gamelab-gameover__btn gamelab-gameover__btn--play">Play Again</button>
+                    <button class="gamelab-gameover__btn gamelab-gameover__btn--quit">Quit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================================
+     PAGE: MUSIC LAB
+     ============================================================ -->
+    <main id="page-musiclab" class="page" aria-label="Music Lab page">
+        <section class="section musiclab-section">
+            <div class="container" style="display:flex;flex-direction:column;align-items:center">
+                <header class="musiclab-header">
+                    <span class="section-label">Interactive Audio</span>
+                    <h1>Music <span class="gradient-text">Lab</span></h1>
+                    <p>Search for a song, sit back, and enjoy the vinyl vibes.</p>
+                </header>
+
+                <div class="musiclab-search">
+                    <input type="text" class="musiclab-search__input" id="musiclab-search"
+                        placeholder="Search a song or paste a YouTube URL..." autocomplete="off" />
+                    <button class="musiclab-search__btn" id="musiclab-search-btn">Play 🎵</button>
+                </div>
+
+                <div class="musiclab-turntable">
+                    <div class="turntable-base"></div>
+                    <div class="turntable-vinyl">
+                        <div class="turntable-label"><span class="turntable-label-text">♪</span></div>
+                    </div>
+                    <div class="turntable-arm"></div>
+                </div>
+
+                <div class="musiclab-nowplaying">
+                    <div class="musiclab-nowplaying__title">No track selected</div>
+                    <div class="musiclab-nowplaying__status">Search or pick a song below</div>
+                </div>
+
+                <div class="musiclab-controls">
+                    <button class="musiclab-btn" title="Previous" disabled>⏮</button>
+                    <button class="musiclab-btn musiclab-btn--play" id="musiclab-play-btn"
+                        title="Play / Pause">▶</button>
+                    <button class="musiclab-btn" title="Next" disabled>⏭</button>
+                    <div class="musiclab-volume">
+                        <span class="musiclab-volume__icon">🔊</span>
+                        <input type="range" class="musiclab-volume__slider" id="musiclab-volume" min="0" max="100"
+                            value="70" />
+                    </div>
+                </div>
+
+                <div class="musiclab-presets">
+                    <button class="musiclab-preset" data-id="dQw4w9WgXcQ"
+                        data-title="Rick Astley – Never Gonna Give You Up">🕺 Rick Astley</button>
+                    <button class="musiclab-preset" data-id="fJ9rUzIMcZQ" data-title="Queen – Bohemian Rhapsody">👑
+                        Bohemian Rhapsody</button>
+                    <button class="musiclab-preset" data-id="hTWKbfoikeg"
+                        data-title="Nirvana – Smells Like Teen Spirit">🎸 Nirvana</button>
+                    <button class="musiclab-preset" data-id="5qap5aO4i9A" data-title="Linkin Park – Numb">🔥 Linkin Park
+                        – Numb</button>
+                    <button class="musiclab-preset" data-id="kXYiU_JCYtU" data-title="Linkin Park – In The End">🎤 In
+                        The End</button>
+                    <button class="musiclab-preset" data-id="YQHsXMglC9A" data-title="Adele – Hello">🎶 Adele –
+                        Hello</button>
+                    <button class="musiclab-preset" data-id="RBumgq5yVrA" data-title="The Weeknd – Blinding Lights">✨
+                        Blinding Lights</button>
+                    <button class="musiclab-preset" data-id="60ItHLz5WEA" data-title="Alan Walker – Faded">🌊
+                        Faded</button>
+                    <button class="musiclab-preset" data-id="JGwWNGJdvx8" data-title="Ed Sheeran – Shape of You">💃
+                        Shape of You</button>
+                </div>
+
+                <!-- Hidden YouTube player -->
+                <div class="musiclab-yt-container" id="musiclab-yt" aria-hidden="true"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+     LIBRARIES
+     ============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Core Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/router.js"></script>
+
+    <!-- Page Scripts -->
+    <script src="js/pages/home.js?v=3"></script>
+    <script src="js/pages/about.js?v=2"></script>
+
+    <script src="js/pages/experience.js?v=2"></script>
+    <script src="js/pages/projects.js?v=2"></script>
+    <script src="js/pages/skills.js?v=2"></script>
+    <script src="js/pages/contact.js?v=2"></script>
+    <script src="js/pages/lab.js?v=2"></script>
+    <script src="js/pages/gamelab.js?v=2"></script>
+    <script src="js/pages/musiclab.js?v=2"></script>
+
+    <!-- Bootstrap -->
+    <script>
+        (function () {
+            // Register ScrollTrigger
+            if (window.gsap && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // Mobile hamburger
+            const hamburger = document.getElementById('hamburger');
+            const overlay = document.getElementById('nav-overlay');
+            hamburger?.addEventListener('click', () => {
+                const isOpen = overlay.classList.toggle('open');
+                hamburger.classList.toggle('open', isOpen);
+                hamburger.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+            overlay?.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', () => {
+                    overlay.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Keyboard nav for section cards
+            document.querySelectorAll('.home-section-card').forEach(card => {
+                card.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+
+            // Init after load
+            new window.PortfolioLoader(() => {
+                const router = new window.PortfolioRouter();
+
+                // Register page init handlers
+                const pageInits = {
+                    home: () => { if (window.initScrollReveal) initScrollReveal(); },
+                    about: () => { initAboutPage && initAboutPage(); if (window.initScrollReveal) initScrollReveal(); },
+
+                    experience: () => { if (window.initScrollReveal) initScrollReveal(); },
+                    projects: () => { if (window.initScrollReveal) initScrollReveal(); },
+                    skills: () => { if (window.initScrollReveal) initScrollReveal(); },
+                    contact: () => { if (window.initScrollReveal) initScrollReveal(); },
+                    lab: () => { if (window.initLab) initLab(); },
+                    gamelab: () => { if (window.initGameLab) initGameLab(); },
+                    musiclab: () => { if (window.initMusicLab) initMusicLab(); },
+                };
+                Object.entries(pageInits).forEach(([id, fn]) => router.register(id, fn));
+
+                // Nav scroll
+                if (window.initNavScroll) initNavScroll();
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
