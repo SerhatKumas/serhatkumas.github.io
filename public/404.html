@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Serhat Kumas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- SPA redirect script for GitHub Pages -->
+    <script type="text/javascript">
+      // 0 segment path for user/organization pages (https://<user>.github.io/)
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      // If path is not root, redirect to SPA route
+      if (l.pathname !== '/') {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #0c0c0c;
+        color: #d7e2ea;
+        font-family: 'Kanit', -apple-system, BlinkMacSystemFont, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        overflow-x: hidden;
+      }
+      .container {
+        max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .avatar-wrapper {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(135deg, rgba(215, 226, 234, 0.4), rgba(255, 255, 255, 0.05));
+        box-shadow: 0 0 35px rgba(215, 226, 234, 0.12);
+        animation: float 4s ease-in-out infinite;
+      }
+      .avatar-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: #121212;
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      .code {
+        font-size: clamp(4rem, 15vw, 7rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: linear-gradient(180deg, #ffffff 30%, #5a646c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .title {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+      .description {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #8c9ba5;
+        line-height: 1.6;
+        max-width: 420px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 2rem;
+        background-color: #ffffff;
+        color: #0c0c0c;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        margin-top: 0.5rem;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        background-color: #e2e8f0;
+        box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="avatar-wrapper">
+        <img src="/apple-touch-icon.png" alt="Serhat Kumas" class="avatar-img" />
+      </div>
+      <div class="code">404</div>
+      <h1 class="title">Lost in Space?</h1>
+      <p class="description">
+        The page you are looking for doesn't exist, has been moved, or the URL might be mistyped.
+      </p>
+      <a href="/" class="btn">Back to Portfolio</a>
+    </div>
+  </body>
+</html>
