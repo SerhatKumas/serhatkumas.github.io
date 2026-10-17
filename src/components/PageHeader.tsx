@@ -26,10 +26,10 @@ export default function PageHeader({ eyebrow, title, intro, children }: PageHead
         <FadeIn immediate delay={0.1} y={20}>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-60 transition-opacity hover:opacity-100 sm:text-sm"
+            className="group relative -mx-4 -my-3 inline-flex cursor-pointer select-none items-center gap-2 px-4 py-3 text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-60 transition-opacity hover:opacity-100 before:absolute before:-inset-2 before:content-[''] sm:text-sm"
           >
-            <ArrowLeft size={14} aria-hidden="true" />
-            Home / {eyebrow}
+            <ArrowLeft size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:-translate-x-1" />
+            <span>Home / {eyebrow}</span>
           </Link>
         </FadeIn>
         <FadeIn immediate delay={0.2} y={40}>
