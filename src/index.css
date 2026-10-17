@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  background: #0c0c0c;
+  font-family: 'Kanit', sans-serif;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Hero layout ----
+   Portrait: avatar centered in the stage, bottom bar below it.
+   Landscape: avatar anchored to the bottom, bottom bar overlaid on the stage.
+   The stage is a size container, so the avatar never grows past the free space. */
+.hero-section {
+  height: 100vh;
+  min-height: 360px;
+}
+@supports (height: 100svh) {
+  .hero-section {
+    height: 100svh;
+  }
+}
+.hero-stage {
+  container-type: size;
+}
+.hero-avatar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(var(--avatar-max), 100cqh, 100cqw);
+}
+.hero-bar {
+  position: relative;
+}
+@media (orientation: landscape) {
+  .hero-avatar {
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    /* also leave room for the tagline (left) and Contact button (right) of the overlaid bar */
+    width: min(var(--avatar-max), 100cqh, calc(100cqw - var(--bar-reserve)));
+  }
+  .hero-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.ticker {
+  animation: ticker 60s linear infinite;
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(123deg, #18011f 7%, #b600a8 37%, #7621b0 72%, #be4c00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
